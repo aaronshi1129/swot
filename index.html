@@ -1,0 +1,137 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWOT Analysis Training Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="home-page">
+            <h1>SWOT Analysis Training Game</h1>
+            <div class="intro-container">
+                <div class="intro-section">
+                    <h2>How to Play</h2>
+                    <ol>
+                        <li>Read each statement carefully</li>
+                        <li>Decide if it represents a Strength, Weakness, Opportunity, or Threat</li>
+                        <li>Click the corresponding button to answer</li>
+                        <li>Learn from the feedback and continue to the next statement</li>
+                        <li>Answer within the time limit to score points</li>
+                        <li>Build streaks and earn badges as you play!</li>
+                    </ol>
+                </div>
+                <div class="intro-section">
+                    <h2>Understanding SWOT Analysis</h2>
+                    <div class="concept-box">
+                        <h3>Strengths</h3>
+                        <p>Internal factors that give your organization an advantage.</p>
+                        <div class="example">Example: Strong brand recognition, skilled workforce</div>
+                    </div>
+                    <div class="concept-box">
+                        <h3>Weaknesses</h3>
+                        <p>Internal factors that place your organization at a disadvantage.</p>
+                        <div class="example">Example: Outdated technology, high turnover</div>
+                    </div>
+                    <div class="concept-box">
+                        <h3>Opportunities</h3>
+                        <p>External factors that could be beneficial to your organization.</p>
+                        <div class="example">Example: Emerging markets, new technologies</div>
+                    </div>
+                    <div class="concept-box">
+                        <h3>Threats</h3>
+                        <p>External factors that could be harmful to your organization.</p>
+                        <div class="example">Example: New competitors, changing regulations</div>
+                    </div>
+                </div>
+                <div class="intro-visual">
+                    <svg width="100%" height="200" viewBox="0 0 600 200">
+                        <!-- SWOT Matrix Illustration -->
+                        <rect x="50" y="20" width="500" height="160" fill="none" stroke="#333" stroke-width="2"/>
+                        <line x1="300" y1="20" x2="300" y2="180" stroke="#333" stroke-width="2"/>
+                        <line x1="50" y1="100" x2="550" y2="100" stroke="#333" stroke-width="2"/>
+                        
+                        <!-- Labels -->
+                        <text x="175" y="60" text-anchor="middle" font-weight="bold" fill="#3498db">Strengths</text>
+                        <text x="425" y="60" text-anchor="middle" font-weight="bold" fill="#e74c3c">Weaknesses</text>
+                        <text x="175" y="140" text-anchor="middle" font-weight="bold" fill="#2ecc71">Opportunities</text>
+                        <text x="425" y="140" text-anchor="middle" font-weight="bold" fill="#f39c12">Threats</text>
+                    </svg>
+                </div>
+            </div>
+            <button id="start-game-btn" class="start-btn">Start Game</button>
+        </div>
+
+        <div id="game-content" class="hidden">
+            <header>
+                <h1>SWOT Analysis <span class="level-indicator" id="level-display">Level 1: Novice Analyst</span></h1>
+                <div class="score-container">
+                    <span>Score: <span id="score">0</span></span>
+                    <span>High Score: <span id="high-score">0</span></span>
+                </div>
+            </header>
+
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="stat-value" id="streak-display">0</span>
+                    <span class="stat-label">Current Streak</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="best-streak-display">0</span>
+                    <span class="stat-label">Best Streak</span>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+
+            <div class="game-container">
+                <div class="time-bar-container">
+                    <div class="time-bar" id="time-bar"></div>
+                </div>
+                
+                <div id="scenario-container">
+                    <p id="scenario-text"></p>
+                </div>
+
+                <div class="swot-buttons-container">
+                    <button id="strength-btn" class="strength">Strength</button>
+                    <button id="weakness-btn" class="weakness">Weakness</button>
+                    <button id="opportunity-btn" class="opportunity">Opportunity</button>
+                    <button id="threat-btn" class="threat">Threat</button>
+                </div>
+
+                <div id="feedback" class="hidden">
+                    <p id="feedback-text"></p>
+                    <button id="next-btn">Next Statement</button>
+                </div>
+            </div>
+
+            <div class="badges-container" id="badges-container">
+            </div>
+
+            <div id="rewards-container" class="hidden">
+                <h2>Achievement Unlocked!</h2>
+                <div id="reward-icon">🏆</div>
+                <p id="reward-message"></p>
+                <button id="continue-btn">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <a href="https://sites.google.com/view/aaronshi" target="_blank" class="footer-link">
+                <img src="https://alittlemoreenglish.weebly.com/uploads/2/6/6/3/26638990/favicon-32x32_orig.png" alt="Aaron Shi" class="footer-icon">
+            </a>
+            <span class="footer-text">Released in April 2025. Created by Aaron Shi.</span>
+        </div>
+    </footer>
+
+    <div class="streak-counter" id="streak-counter">2x Streak!</div>
+
+    <script type="module" src="config.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
